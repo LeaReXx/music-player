@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    direction: ltr;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: hsla(259, 20%, 25%, 1);
+    background: linear-gradient(120deg, hsla(259, 20%, 25%, 1) 5%, hsla(257, 18%, 35%, 1) 89%);
+    background: -moz-linear-gradient(120deg, hsla(259, 20%, 25%, 1) 5%, hsla(257, 18%, 35%, 1) 89%);
+    background: -webkit-linear-gradient(120deg, hsla(259, 20%, 25%, 1) 5%, hsla(257, 18%, 35%, 1) 89%);
+
+}
+
+.box {
+    min-width: 300px;
+    max-width: 400px;
+    height: 600px;
+    backdrop-filter: blur(100px);
+    border-radius: 15px;
+    background: rgb(87, 39, 116);
+    background: linear-gradient(324deg, rgba(87, 39, 116, 1) 0%, rgba(41, 41, 41, 1) 100%);
+}
+
+.cover {
+    text-align: center;
+    padding: 20px;
+}
+
+.cover img {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.music-name {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.progress {
+    width: 80%;
+    height: 4px;
+    background-color: rgb(90, 88, 88);
+    margin: 0 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.progress:hover {
+    height: 5px;
+}
+
+.control-btn {
+    padding: 0 10px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.backward,
+.pause-play,
+.speed,
+.forward {
+    background: none;
+    margin: auto;
+    align-self: center;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(214, 214, 214);
+    background-color: #3e065f;
+    -webkit-box-shadow: 2px 2px 0px 2px #1d032c; 
+    box-shadow: 2px 2px 0px 1px #1d032c;
+    transition: all .2s;
+}
+.control-btn button:hover {
+    -webkit-box-shadow: 2px 2px 0px 2px #1d032c; 
+    box-shadow: 2px 2px 5px 2px #1d032c;
+}
+
+.control-btn button:active {
+    transform: scale(0.95);
+}
+
+.forward,
+.backward {
+    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    align-self: center;
+}
+
+.backward {
+    grid-column: 2/4;
+    grid-row: 2/5;
+}
+
+.pause-play {
+    width: 64px;
+    height: 64px;
+    font-size: 40px;
+    grid-column: 4/6;
+    grid-row: 2/5;
+}
+
+.speed {
+    width: 30px;
+    height: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    grid-column: 4/6;
+    grid-row: 1/2;
+    margin-bottom: 8px;
+}
+
+.forward {
+    grid-column: 6/8;
+    grid-row: 2/5;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <div class="box">
+            <audio id="player"
+                src="http://dl.avangtv.com/music/00-10/Shadmehr%20Aghili/Shadmehr%20Aghili%20-%20Bi%20Ehsas.mp3"></audio>
+            <div class="cover">
+                <img src="/images/cover.jpg" alt="Music Cover">
+                <p class="music-name" title="Shadmehr Aghili - Bi Ehsas">Shadmehr Aghili - Bi Ehsas</p>
+            </div>
+            <div class="player-control">
+                <div class="time">
+                    <p>00:00</p>
+                    <div class="progress"></div>
+                    <p>03:40</p>
+                </div>
+                <div class="control-btn">
+                    <button class="backward"><i class="fas fa-step-backward"></i></button>
+                    <button class="pause-play"><i class="fas fa-pause"></i></button>
+                    <button class="speed">x1</button>
+                    <button class="forward"><i class="fas fa-step-forward"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="/script/script.js"></script>
+</body>
+
+</html>
