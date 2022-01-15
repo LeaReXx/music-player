@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family: poppins;
     direction: ltr;
-    color: white;
 }
 
 body {
@@ -12,21 +11,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: hsla(259, 20%, 25%, 1);
-    background: linear-gradient(120deg, hsla(259, 20%, 25%, 1) 5%, hsla(257, 18%, 35%, 1) 89%);
-    background: -moz-linear-gradient(120deg, hsla(259, 20%, 25%, 1) 5%, hsla(257, 18%, 35%, 1) 89%);
-    background: -webkit-linear-gradient(120deg, hsla(259, 20%, 25%, 1) 5%, hsla(257, 18%, 35%, 1) 89%);
-
+    background-size: cover;
+    backdrop-filter: blur(15px);
 }
 
 .box {
     min-width: 300px;
     max-width: 400px;
     height: 600px;
-    backdrop-filter: blur(100px);
-    border-radius: 15px;
-    background: rgb(87, 39, 116);
-    background: linear-gradient(324deg, rgba(87, 39, 116, 1) 0%, rgba(41, 41, 41, 1) 100%);
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 }
 
 .cover {
@@ -40,6 +38,7 @@ body {
 }
 
 .music-name {
+    color: #ffffff;
     font-size: 20px;
     font-weight: 400;
     margin: 10px 0 0 0;
@@ -56,16 +55,25 @@ body {
 }
 
 .progress {
-    width: 80%;
-    height: 4px;
+    width: 275px;
+    height: 5px;
     background-color: rgb(90, 88, 88);
     margin: 0 10px;
     border-radius: 50px;
     cursor: pointer;
 }
 
-.progress:hover {
+.progress-update {
+    background-color: rgba(255, 0, 0, 0.623);
     height: 5px;
+    width: 0;
+    border-radius: inherit;
+}
+
+#current-time,
+#duration {
+    color: #ffffff;
+    padding: 0 5px;
 }
 
 .control-btn {
@@ -74,31 +82,33 @@ body {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    position: relative;
 }
 
 .backward,
 .pause-play,
 .speed,
 .forward {
-    background: none;
     margin: auto;
     align-self: center;
     border: 0;
-    border-radius: 50%;
     cursor: pointer;
-    color: rgb(214, 214, 214);
-    background-color: #3e065f;
-    -webkit-box-shadow: 2px 2px 0px 2px #1d032c; 
-    box-shadow: 2px 2px 0px 1px #1d032c;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    background: #e0e0e0;
     transition: all .2s;
 }
+
 .control-btn button:hover {
-    -webkit-box-shadow: 2px 2px 0px 2px #1d032c; 
-    box-shadow: 2px 2px 5px 2px #1d032c;
+    color: hsla(0, 0%, 0%, 0.8);
+    box-shadow: inset 20px 20px 60px #bebebe,
+        inset -20px -20px 60px #ffffff;
 }
 
 .control-btn button:active {
     transform: scale(0.95);
+
+
 }
 
 .forward,
@@ -135,4 +145,45 @@ body {
 .forward {
     grid-column: 6/8;
     grid-row: 2/5;
+}
+
+.volume-control {
+    grid-column: 8/9;
+    grid-row: 1/6;
+    position: relative;
+}
+
+#volume {
+    color: rgb(214, 214, 214);
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+}
+
+.volume-range {
+    width: 90px;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 35px;
+    right: -30px;
+    overflow: hidden;
+    -webkit-appearance: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.volume-range::-webkit-slider-runnable-track {
+    background-color: #d6d6d6;
+}
+
+.volume-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: rgb(0, 0, 0, 0.8);
+    border-radius: 50px;
+    box-shadow: -80px 0 0 75px rgba(0, 0, 0, 0.6);
+    border: 0;
 }
