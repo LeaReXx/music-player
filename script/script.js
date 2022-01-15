@@ -16,6 +16,7 @@ let forward = $.querySelector('.forward');
 let volumeIcon = $.getElementById('volume')
 let volumeRange = $.querySelector('.volume-range')
 
+// music name,cover,link
 let musics = [{
         Name: 'Shadmehr Aghili - Bi Ehsas',
         coverImg: './images/cover1.jpg',
@@ -52,11 +53,11 @@ function pausePlayAction() {
     }
 
 }
-
 pausePlay.addEventListener('click', pausePlayAction)
+
+// now playing 
 let index = 0;
 let playing;
-
 function nowPlaying() {
     playing = musics[index];
     player.src = playing.link;
@@ -71,12 +72,10 @@ player.addEventListener('ended', function () {
     forwardAction()
 })
 
-// Song Duration 
 
 
 
-
-// forward bakcward button action
+// Keyboard Events
 function eventKeys(event) {
     if (event.keyCode === 176) {
         forwardAction()
@@ -95,7 +94,7 @@ function nextAutoPlay() {
         player.play()
     }
 }
-
+// forward and backward button action 
 function forwardAction() {
     index++
     if (index === musics.length) {
@@ -122,8 +121,9 @@ function backwardAction() {
 }
 backward.addEventListener('click', backwardAction);
 
-
-function testfunc() {
+// music current tiem and duration 
+function playerTimeUpdate() {
+    // music duration
     let duration = player.duration
     let currentTime = player.currentTime
     if (isplaying) {
@@ -132,6 +132,10 @@ function testfunc() {
         musicDuration.innerHTML = durationMin + ':' + durationSec
         if (!durationMin || !durationSec) {
             musicDuration.innerHTML = '00:00'
+        }
+        if (durationMin < 10) {
+            musicDuration.innerHTML = '0' + durationMin + ':' + durationSec
+
         }
     }
 
@@ -155,8 +159,9 @@ function testfunc() {
 
     current.innerHTML = currentMin + ':' + currentSec;
 }
-player.addEventListener('timeupdate', testfunc)
+player.addEventListener('timeupdate', playerTimeUpdate)
 
+// music progressbar on click 
 function progressBarAction(event) {
     let width = this.clientWidth;
     let clicked = event.offsetX
@@ -179,9 +184,9 @@ function playBackRateAction() {
 speed.addEventListener('click', playBackRateAction)
 
 // music volume on change 
-function volumeRangeAction(){
+function volumeRangeAction() {
     player.volume = volumeRange.value
-    if(volumeRange.value === '0') {
+    if (volumeRange.value === '0') {
         volumeIcon.className = 'fas fa-volume-mute'
     } else {
         volumeIcon.className = 'fas fa-volume-up'

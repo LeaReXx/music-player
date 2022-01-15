@@ -55,10 +55,11 @@ body {
 }
 
 .progress {
-    width: 275px;
+    width: 80%;
+    max-width: 275px;
     height: 5px;
-    background-color: rgb(90, 88, 88);
     margin: 0 10px;
+    background-color: rgb(207, 207, 207);
     border-radius: 50px;
     cursor: pointer;
 }
@@ -73,7 +74,7 @@ body {
 #current-time,
 #duration {
     color: #ffffff;
-    padding: 0 5px;
+    width: 10%;
 }
 
 .control-btn {
@@ -107,8 +108,6 @@ body {
 
 .control-btn button:active {
     transform: scale(0.95);
-
-
 }
 
 .forward,
