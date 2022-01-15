@@ -19,19 +19,19 @@ let volumeRange = $.querySelector('.volume-range')
 let musics = [{
         Name: 'Shadmehr Aghili - Bi Ehsas',
         coverImg: './images/cover1.jpg',
-        link: 'http://dl.avangtv.com/music/00-10/Shadmehr%20Aghili/Shadmehr%20Aghili%20-%20Bi%20Ehsas.mp3'
+        link: './musics/Shadmehr Aghili - Bi Ehsas.mp3'
     },
 
     {
         Name: 'Amir Tataloo – Parvaz',
         coverImg: './images/cover2.jpg',
-        link: 'https://dl.roadmusic.ir/Music/1400/09/Amir%20Tataloo/Amir_Tataloo_Parvaz%28128%29.mp3'
+        link: './musics/Amir_Tataloo_Parvaz(128).mp3'
     },
 
     {
         Name: 'Leito - Omadam To Shahr',
         coverImg: './images/cover3.jpg',
-        link: 'http://dl.uptrack.ir/Uptrack-ROOt/1400/02%20Ordibehesht/15/Oomadam%20Too%20Shahr.mp3'
+        link: './musics/Oomadam Too Shahr.mp3'
     }
 ]
 
