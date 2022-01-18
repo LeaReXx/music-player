@@ -192,4 +192,4 @@ function volumeRangeAction() {
         volumeIcon.className = 'fas fa-volume-up'
     }
 }
-volumeRange.addEventListener('change', volumeRangeAction)
+volumeRange.addEventListener('input', volumeRangeAction)
