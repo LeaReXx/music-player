@@ -2,6 +2,7 @@
 const $ = document
 let bodyElem = $.body
 let player = $.getElementById('player')
+let playerSource = $.getElementById('player-src')
 let cover = $.getElementById('music-cover');
 let musicName = $.querySelector('.music-name');
 let current = $.getElementById('current-time');
@@ -20,7 +21,7 @@ let volumeRange = $.querySelector('.volume-range')
 let musics = [{
         Name: 'Shadmehr Aghili - Bi Ehsas',
         coverImg: './images/cover1.jpg',
-        link: './musics/Shadmehr Aghili - Bi Ehsas.mp3'
+        link: 'https://s1.pr3m.ir/Music/1399/1/23/Shadmehr%20Aghili%20-%20Bi%20Ehsas.mp3'
     },
 
     {
@@ -60,7 +61,7 @@ let index = 0;
 let playing;
 function nowPlaying() {
     playing = musics[index];
-    player.src = playing.link;
+    playerSource = playing.link;
     musicName.innerHTML = playing.Name;
     cover.src = playing.coverImg;
     bodyElem.style.backgroundImage = `url(${playing.coverImg})`;
